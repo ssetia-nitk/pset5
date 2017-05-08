@@ -40,7 +40,50 @@ void freenode(trie* firstnode)
 bool check(const char* word)
 {
     // TODO
- return true;
+    // letter as int
+    int aInt = (int)'a';
+    int zInt = (int)'z';
+    
+    // set current node to first node
+    trie* currNode = firstnode;
+    
+    // looping through each letter in word
+    int i = 0;
+    while(word[i] != '\0')
+    {
+        char ch = word[i];
+        
+        
+        // find is ch is apostrophe
+        if (word[i] == '\'')
+        {
+            ch = zInt + 1;
+        }
+        // converting letter between 0 and 25
+        int childIndex = tolower(ch) - aInt;
+        
+        if (currNode -> children[childIndex] != NULL)
+        {
+            currNode = currNode -> children[childIndex];
+            i++;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
+    
+        if (currNode -> isWord == true)
+        {
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     
      
 }
