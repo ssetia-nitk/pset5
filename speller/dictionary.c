@@ -8,7 +8,30 @@
 /** 
  * Implementing a trie datastructure
  */
-
+ typedef struct trie
+ {
+    bool isWord;
+    struct trie* children[27];
+ }
+ trie;
+ 
+ trie* firstnode;
+ 
+ // function to freenode
+void freenode(trie* firstnode)
+{
+    for(int i = 0; i < 27; i++)
+    {
+        if (firstnode -> children[i] != NULL)
+        {
+            freenode(firstnode -> children[i]);
+        }
+    }
+    free(firstnode);
+    return;
+}
+ // total number of words counter
+ int noOfWords = 0;
 
 
 /**
