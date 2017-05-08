@@ -1,0 +1,10 @@
+0.  longest word in english
+1.  Returns resource usage measures for its parameter 'who'
+2.  16
+3.  C requires passing structs by reference in functions
+4.  Speller.c reads words from the file, character by character, until it reaches the end of the file. If the character is a letter or apostrophe,
+    it is added to a word. If the word becomes larger than what we have defined as the largest word possible, the word is
+    ignored. If the word has a digit, it is ignored.
+    If a word still exists, it is counted, checked for spelling, and printed.  
+5.  To be able to account for numerical inputs and other punctuation which we have deemed invalid.
+6.  Because word LENGTH and DICTIONARY are # declared as constants
